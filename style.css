@@ -1,0 +1,13 @@
+body {
+    background-color: rgb(70, 66, 66);
+    color: aqua;
+    font-size: 1.5em;
+}
+
+button {
+    background-color: rgb(34, 32, 32);
+    color: aquamarine;
+    width: 70px;
+    height: 30px;
+    border-radius: 25px;
+}

@@ -1,0 +1,42 @@
+body {
+    background-color: rgb(61, 58, 58);
+}
+
+.box {
+    height: 100px;
+    width: 20%;
+    border: 2px solid aquamarine;
+    text-align: center;
+    color: aqua;
+    padding: 25px;
+    margin: auto;
+}
+
+#myLabel {
+    font-size: 5em;
+    text-align: center;
+}
+
+.buttons {
+    height: 100px;
+    width: 35%;
+    margin: auto;
+}
+
+
+button {
+    background-color: rgb(32, 31, 31);
+    color: aqua;
+    height: 50px;
+    width: 100px;
+    border-radius: 25px;
+    margin: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.25s;
+    font-size: 1.1em;
+}
+
+button:hover {
+    color: aquamarine;
+}
