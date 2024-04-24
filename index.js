@@ -184,3 +184,174 @@ let min = Math.min(x , y , z);
 console.log(max);
 console.log(min);
 */
+
+
+/* Random Number generator 
+
+
+let rand = Math.floor(Math.random() * 6) + 1;
+
+console.log(rand);
+*/
+
+
+/* IF Statement 
+
+
+let age = 0; 
+
+if (age >= 18 && age <= 100) {
+    console.log("You are old enough to enter this site!");    
+} else if (age == 0) {
+    console.log("You were just born! You can't enter!");
+} else if (age < 0) {
+    console.log("Your age can't be negative number!");
+} else if (age > 100) {
+    console.log("You are probably dead!");
+} else {
+    console.log("You are not old enough to enter this site!");
+}
+
+// let isStudent = true;
+
+// if  (isStudent) { // only boolean means true, !boolean means false
+//     console.log("You are a student");
+// } else {
+//     console.log("You are not a student");
+// }
+*/
+
+
+/* Checked Property 
+
+
+const myCheck = document.getElementById("myCheck");
+const visaButton = document.getElementById("visaButton");
+const masterButton = document.getElementById("masterButton");
+const paypalButton = document.getElementById("paypalButton");
+const mySubmit = document.getElementById("mySubmit");
+const subResult = document.getElementById("subResult");
+const paymentResult = document.getElementById("paymentResult");
+
+mySubmit.onclick = function() {
+    if (myCheck.checked) {
+        subResult.textContent = `You are Subscribed!`;
+    } else {
+        subResult.textContent = `You are not Subscribed!`;
+    }
+
+    if (visaButton.checked || masterButton.checked || paypalButton.checked) {
+        paymentResult.textContent = `You choosed payment method successfully!`;
+    } else {
+        paymentResult.textContent = `You didn't choose any payment method!`;
+    }    
+}
+*/
+
+
+/* Tenary Operator
+
+
+// let age = 5;
+// let message = age >= 18 ? "You are an adult" : "You are a minor";
+
+let isStudent = false;
+let message = isStudent ? "You are a Student" : "You are not a student";
+
+console.log(message);
+*/
+
+
+/* Switches
+
+
+let day = "pizza" ;
+
+switch(day) {
+    case 1 : console.log("Monday");
+            break;
+    case 2 : console.log("Tuesday");
+            break;
+    case 3 : console.log("Wednesday");
+            break;
+    case 4 : console.log("Thursday");
+            break; 
+    case 5 : console.log("Friday");
+            break;
+    case 6 : console.log("Saturday");
+            break;
+    case 7 : console.log("Sunday");
+            break; 
+    default : console.log(`${day} is not a day`);
+            break;                       
+}
+ */
+
+
+/* String Methods 
+
+
+let username = "Labib";
+let x;
+
+// x = username.charAt(3);
+// x = username.indexOf("b");
+// x = username.lastIndexOf("b");
+// x = username.length;
+// x = username.trim();
+// x = username.toUpperCase();
+// x = username.toLowerCase();
+// x = username.repeat(5);
+// x = username.startsWith("L");
+// x = username.endsWith("t");
+// x = username.includes("i");
+// x = username.replaceAll("b" , "t");
+// x = username.padStart(15 , "T");
+// x = username.padEnd(15 , "T");
+
+console.log(x);
+*/
+
+
+/* String Slicing 
+
+
+let fullname = "Labib Tahmid";
+// let firstname = fullname.slice(0 , 3);
+// let lastname = fullname.slice(6 , 12);
+
+let firstname = fullname.slice(0 , fullname.indexOf(" "));
+let lastname = fullname.slice(fullname.indexOf(" ") + 1);
+
+console.log(firstname);
+console.log(lastname);
+*/
+
+
+/* Method Chaining
+
+
+let username = window.prompt("Enter your username");
+//instead of writing a lot of method one after another, you can combine them using .(dot)
+username = username.trim().charAt(0).toUpperCase() + username.trim().slice(1).toLowerCase();
+console.log(username);
+ */
+
+
+/* Strict Equality
+
+const PI = 3.1416 ;
+
+// if (PI === "3.1416") {
+//     console.log("matches PI"); // for == because only compares value
+// } else {
+//     console.log("Does not match PI"); // for === not only value but also data type
+// }
+
+if (PI !== "3.1416") {
+    console.log("does not matches PI");
+} else {
+    console.log("Matches PI");
+}
+ */
+
