@@ -285,7 +285,7 @@ switch(day) {
     default : console.log(`${day} is not a day`);
             break;                       
 }
- */
+*/
 
 
 /* String Methods 
@@ -335,10 +335,11 @@ let username = window.prompt("Enter your username");
 //instead of writing a lot of method one after another, you can combine them using .(dot)
 username = username.trim().charAt(0).toUpperCase() + username.trim().slice(1).toLowerCase();
 console.log(username);
- */
+*/
 
 
 /* Strict Equality
+
 
 const PI = 3.1416 ;
 
@@ -353,5 +354,92 @@ if (PI !== "3.1416") {
 } else {
     console.log("Matches PI");
 }
- */
+*/
 
+
+/* Array 
+
+
+let fruits = ["apple" , "orange" , "banana"];
+
+// console.log(fruits);
+// console.log(fruits[0]);
+// console.log(fruits[1]);
+// console.log(fruits[2]);
+
+// fruits.push("coconut");
+// fruits.pop();
+// fruits.unshift("coconut");
+// fruits.shift();
+
+// console.log(fruits);
+
+// let numOfFruits = fruits.length;
+
+// console.log(numOfFruits);
+
+// let index = fruits.indexOf("mango");
+// console.log(index);
+
+// for (fruit of fruits) { 
+//     console.log(fruit); // fruit can be x , y anything and this for loop is enhanced for loop
+// }
+
+console.log(fruits.sort());
+console.log(fruits.sort().reverse());
+*/
+
+
+/* Spread Operator
+
+
+// let numbers = [1 , 2 , 3 , 4 , 5];
+// console.log(numbers);
+
+// let max = Math.max(...numbers);
+// let min = Math.min(...numbers); // ... is a spread operator, it sperates the number from the array
+// console.log(max);
+// console.log(min);
+
+// let username = "Labib Tahmid";
+// let letters = [...username];
+// console.log(letters);
+// letters = letters.join("-");
+// console.log(letters);
+
+let fruits = ["apple" , "banana" , "orange"];
+let vegetable = ["carrots" , "Celery" , "potatoes"];
+let food = [...fruits , ...vegetable , "cake" , "coke"];
+
+console.log(food);
+*/
+
+
+/* Rest Parameter 
+
+
+// let food1 = "Apple" , food2 = "Cake" , food3 = "Coke" , food4="Orange";
+
+// function openFridge (...foods) {
+//     console.log(foods); // join the elements in an array
+// }
+
+// openFridge(food1,food2,food3,food4);
+
+// function getFoods (...foods) {
+//     return foods;
+// }
+
+// console.log(getFoods(food1,food2,food3,food4));
+
+let myname = fullname ("Labib" , "Tahmid" , "Mahat");
+
+function fullname (...username) {
+    return username;
+}
+
+console.log(myname.join(" "));
+*/
+
+
+/* */

@@ -1,0 +1,53 @@
+body {
+    background-color: rgb(43, 41, 41);
+    text-align: center;
+    font-family: Verdana, sans-serif;
+}
+
+body > div {
+   width: 500px;
+   height: auto;
+   margin: auto;
+   padding: 25px;
+   background-color: rgb(104, 99, 99);
+   color: aqua;
+   box-shadow: 5px 5px 15px rgb(8, 8, 8);
+   font-size: 1.4em;
+}
+
+h2 {
+    color: aqua;
+    margin-bottom: 15px;
+}
+
+#diceNum {
+    width: 30px;
+    font-size: 1.2em;
+    text-align: center;
+    background-color: rgb(141, 135, 135);
+    color: rgb(0, 255, 255);
+    border: 2px solid black;
+}
+
+#submit {
+    margin: 25px;
+    background-color: rgb(32, 31, 31);
+    color: aqua;
+    font-size: 1.2em;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#submit:hover {
+    color: aquamarine;
+}
+
+#dice {
+    margin-bottom: 10px;
+}
+
+#diceImg img{
+    width: 150px;
+    height: 150px;
+    margin-right: 10px;
+}

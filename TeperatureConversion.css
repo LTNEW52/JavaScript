@@ -1,0 +1,37 @@
+body {
+    background-color: rgb(53, 50, 50);
+}
+
+form {
+    color: aqua;
+    text-align: center;
+    padding: 25px;
+    font-size: 1.4em;
+    background-color: rgb(88, 84, 84);
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 5px 5px 5px rgb(26, 25, 25);
+}
+
+input {
+    margin-bottom: 25px;
+}
+
+form #myTemp {
+    background-color: rgb(85, 81, 81);
+    color: aqua;
+    font-size: 1.2em;
+    width: 90px;
+    height: 30px;
+    text-align: center;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+#mySubmit {
+    background-color: rgb(32, 31, 31);
+    color: aqua;
+    width: 90px;
+    height: 40px;
+    font-size: 1.1em;
+    border-radius: 25px;
+}
