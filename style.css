@@ -7,8 +7,8 @@ body {
 button {
     background-color: rgb(34, 32, 32);
     color: aquamarine;
-    width: 120px;
-    height: 70px;
+    width: 200px;
+    height: auto;
     border-radius: 25px;
     font-size: 1.1em;
 }

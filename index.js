@@ -442,4 +442,809 @@ console.log(myname.join(" "));
 */
 
 
+/* Callback 
+
+
+// function hello (callback) {
+//     console.log("Hello!");
+//     callback();
+// }
+
+// function goodbye () {
+//     console.log("goodbye!");
+// }
+
+// function leave () {
+//     console.log("leave");
+// }
+
+// hello(leave);
+
+function sum (callback , x , y) {
+    let result = x + y;
+    callback(result);
+}
+
+function display (result) {
+    console.log(result);
+}
+
+sum (display , 5 , 6);
+*/
+
+
+/* forEach() 
+
+
+// let number = [1 , 2 , 3 , 4 , 5];
+
+// function double (element , index , array) {
+//     array[index] = element * 3; // element , index , array are given in forEach()
+// }
+
+// function display(element) {
+//     console.log(element);
+// }
+
+// number.forEach(double);
+// number.forEach(display);
+
+let fruits = ["apple" , "banana" , "orange"];
+
+function display (element) {
+    console.log(element);
+}
+
+function capitalize (element , index , array) {
+    array[index] = element.charAt(0).toUpperCase() + element.slice(1);
+}
+
+fruits.forEach(capitalize);
+fruits.forEach(display);
+*/
+
+
+/* .map() 
+
+
+const number = [1 , 2 , 3 , 4 , 5]; // .map similar to forEach but it returns a new array
+
+function square (element) {
+    return Math.pow(element , 2);
+}
+
+let sqr = number.map(square);
+
+console.log(sqr);
+
+const date = ["2024-01-15" , "2025-07-28" , "2026-05-17"];
+
+function arrange (element) {
+    let newDate = element.split("-");
+    return `${newDate[2]}/${newDate[1]}/${newDate[0]}`;
+}
+
+console.log(date.map(arrange));
+*/
+
+
+/* filter() 
+
+
+let number = [1 , 2 , 3 , 4 ,5 , 6 , 7];
+
+function isEven (element) {
+    return element % 2 === 0;
+}
+
+function isOdd (element) {
+    return element % 2 !== 0;
+}
+
+let x = number.filter(isEven); // filter takes the boolean true and make a array by filtering the element
+let y = number.filter(isOdd);
+
+console.log(y);
+*/
+
+
+/* .reduce() 
+
+
+let price = [50 , 12 , 19 , 28 , 2 , 32]; // reduce the element to a single value
+
+function sum (previous , next ) { //element
+    return previous + next;
+}
+
+function max (previous , next) {
+    return Math.max(previous , next);
+}
+
+function min (previous , next) {
+    return Math.min(previous , next);
+}
+
+let total = price.reduce(sum);
+console.log(`$${total}`);
+console.log(price.reduce(max));
+console.log(price.reduce(min));
+*/
+
+
+/* function expression 
+
+
+let helloyou = function hello () {
+    console.log("Hello!");
+}
+
+setTimeout(helloyou() , 3000); //delays the function by ms, donot use () here normally , but we used variable here so we need ()
+
+// setTimeout(function () {
+//     console.log("This works too!")
+// } , 3000);
+
+let num = [1 , 2 , 3 , 4 , 5 , 6]; //function expression doesnt need function name , you can declare and call it instant
+
+console.log(num.map(function(element) {
+    return Math.pow (element , 2);
+}));
+
+console.log(num.filter(function (element) {
+    return element % 2 !== 0;
+}));
+
+console.log(num.reduce(function(prev , next) {
+    return prev + next;
+}));
+*/
+
+
+/* Arrow Function 
+
+
+// const hello = () => console.log("hello");
+// hello();
+
+// const hello = (fullname , age) => {console.log(`Hello ${fullname}`);
+//                             console.log(`You are ${age} years old`)};
+// hello("labib" , 25);
+
+// setTimeout(() => console.log("HELLO") , 3000);
+*/
+
+
+/* Objects
+
+
+const person1 = {
+    firstname: "labib",
+    lastname: "tahmid",
+    age: 23, // , instead of ;
+    isStudent: true,
+    sayHello: function () {
+        console.log(`HI ${this.firstname}`);
+    },
+}
+
+const person2 = {
+    firstname: "x",
+    lastname: "yx",
+    age: 30, // , instead of ;
+    isStudent: false,
+    sayHello: function () {
+        console.log(`HI ${this.firstname}`);
+    },
+}
+
+console.log(person1.firstname , person1.age , person1.isStudent);
+console.log(person2.firstname , person2.age , person2.isStudent);
+
+person1.sayHello();
+person2.sayHello();
+*/
+
+
+/* What is This 
+
+
+const person1 = {
+    name: "Labib",
+    food: "Cold Coffee",
+    hello() {
+        console.log(`HI ${this.name}, is drinking ${this.food}`)
+    }
+}
+
+const person2 = {
+    name: "Tahmid",
+    food: "Hot Coffee",
+    hello() {
+        console.log(`HI ${this.name}, is drinking ${this.food} , why would you do that?`)
+    }
+}
+
+person1.hello();
+person2.hello();
+*/
+
+
+/* Constructor 
+
+
+function Car (make , model , year , color) {
+    this.make = make,
+    this.model = model,
+    this.year = year,
+    this.color = color,
+    this.drive = function () {
+        console.log(`You are driving ${this.make}`); // you have to use this.something = function () , not function something () because that means private function
+    }
+}
+
+const car1 = new Car("Ford" , "Mustang" , 2024 , "Red");
+const car2 = new Car("Cheverolet" , "Camaro" , 2025 , "Blue");
+const car3 = new Car("Dodge" , "Charger" , 2026 , "Silver");
+
+console.log(car1.make , car1.model , car1.year , car1.color);
+console.log(car2.make , car2.model , car2.year , car2.color);
+console.log(car3.make , car3.model , car3.year , car3.color);
+
+car1.drive();
+car2.drive();
+car3.drive();
+*/
+
+
+/* Classes 
+
+
+class Product {
+    constructor (productName , price) {
+        this.productName = productName;
+        this.price = price;
+    }
+    displayProduct() {
+        console.log(`Product: ${this.productName} , Price: ${this.price}`);
+    }
+}
+
+const product1 = new Product("Shirt" , "1500");
+const product2 = new Product("Pant" , "2200");
+const product3 = new Product("Suit" , "3450");
+product1.displayProduct();
+product2.displayProduct();
+product3.displayProduct();
+*/
+
+
+/* Static 
+
+
+// class MathUtil {
+//     PI = 3.1416; // It needs object Instance
+// }
+
+// const MathUtil1 = new MathUtil();
+
+// console.log(MathUtil1.PI);
+
+class MathUtil {
+    static PI = 3.1416; // This is in Class rather than object, so no need to make instance, so we used static
+    static getDiameter(radius) {
+        return radius * 2;
+    }
+    static getArea(radius) {
+        return this.PI * radius * radius;
+    }
+}
+
+ console.log(MathUtil.PI , MathUtil.getDiameter(15) , MathUtil.getArea(15));
+
+class User {
+    static usercount = 0;
+    constructor (username) {
+        this.username = username;
+        User.usercount++;
+    }
+
+    sayHello () {
+        console.log(`Hello ${this.username}`);
+    }
+
+    static onlineCount () {
+        console.log(`${this.usercount} is online`);
+    }
+}
+
+const user1 = new User("Labib");
+const user2 = new User("Tahmid");
+const user3 = new User("Mahat");
+
+console.log(user3.username , User.usercount);
+
+user2.sayHello();
+User.onlineCount();
+*/
+
+
+/* Inheritance 
+
+
+class Animal {
+    alive = true;
+
+    eat() {
+        console.log(`${this.name} is eating`);
+    }
+}
+
+class Rabbit extends Animal {
+    name = "Rabbit";
+    run () {
+        console.log(`Is running!`)
+    }
+}
+
+class Fish extends Animal {
+    name = "Fish";
+    swim () {
+        console.log(`Is swimming!`)
+    }
+}
+
+class Hawk extends Animal {
+    name = "Hawk";
+    fly () {
+        console.log(`Is flying!`)
+    }
+}
+
+const rabbit = new Rabbit();
+const fish = new Fish();
+const hawk = new Hawk();
+
+console.log(fish.alive);
+
+rabbit.eat();
+rabbit.run();
+fish.eat();
+fish.swim();
+hawk.eat();
+hawk.fly();
+*/
+
+
+/* Super Keyword 
+
+
+class Animal {
+    constructor (name , age) {
+        this.name = name ;
+        this.age = age;
+    }
+
+    move(speed) {
+        console.log(`${this.name} moves at ${speed} kmh`)
+    }
+}
+
+class Rabbit extends Animal {
+    constructor(name , age , runspeed) {
+        super(name , age);
+        this.runspeed = runspeed;
+    }
+    run() {
+        console.log(`${this.name} is running`);
+        super.move(this.runspeed);
+    }
+}
+
+class Fish extends Animal {
+    constructor(name , age , swimspeed) {
+        super(name , age);
+        this.swimspeed = swimspeed;
+    }
+    swim() {
+        console.log(`${this.name} is swimming`);
+        super.move(this.swimspeed);
+    }
+}
+
+class Hawk extends Animal {
+    constructor(name , age , flyspeed) {
+        super(name , age);
+        this.flyspeed = flyspeed;
+    }
+    fly() {
+        console.log(`${this.name} is flying`);
+        super.move(this.flyspeed);
+    }
+}
+
+const rabbit = new Rabbit("rabbit" , 1 , 30);
+const fish = new Fish("fish" , 2 , 12);
+const hawk = new Hawk("hawk" , 5 , 50);
+
+console.log(fish.name , fish.age , fish.swimspeed);
+
+rabbit.run();
+fish.swim();
+hawk.fly();
+*/
+
+
+/* Getter and Setter 
+
+
+class Rectangle {
+
+    constructor(width , height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    set width(newwidth) {
+        if (newwidth > 0) {
+            this._width = newwidth;
+        } else {
+            console.error ("Enter positive number!");
+        }
+    }
+    set height(newheight) {
+        if (newheight > 0) {
+            this._height = newheight;
+        } else {
+            console.error ("Enter positive number!");
+        }
+    }
+
+    get width() {
+        return this._width.toFixed(2);
+    }
+
+    get height() {
+        return this._height.toFixed(2);
+    }
+
+    get area () {
+        return (this._width * this._height).toFixed(2);
+    }
+}
+
+const rectangle = new Rectangle(3 , 5);
+console.log(rectangle.width , rectangle.height , rectangle.area);
+
+class Person {
+    constructor(firstname , lastname , age) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.age = age;
+    }
+
+    set firstname (newFirstname) {
+        if (typeof newFirstname === "string" && newFirstname.length > 0) {
+            this._firstname = newFirstname;
+        } else {
+            console.error ("Firstname must be non Empty String");
+        }
+    }
+
+    set lastname (newlastname) {
+        if (typeof newlastname === "string" && newlastname.length > 0) {
+            this._lastname = newlastname;
+        } else {
+            console.error ("Lastname must be non Empty String");
+        }
+    }
+
+    set age (newage) {
+        if (typeof newage === "number" && newage >= 0) {
+            this._age = newage;
+        } else {
+            console.error ("Age must be non negative number");
+        }
+    }
+
+    get firstname() {
+        return this._firstname;
+    }
+
+    get lastname() {
+        return this._lastname;
+    }
+
+    get fullname () {
+        return this._firstname + this._lastname;
+    }
+
+    get age() {
+        return this._age;
+    }
+}
+
+const person = new Person("Labib", "Tahmid" , 23);
+
+console.log(person.firstname , person.lastname , person.fullname ,person.age);
+*/
+
+
+/* Destructuring 
+
+
+// swapping variables
+
+let a = 1 , b = 2;
+
+[a , b] = [b , a];
+
+console.log(a , b);
+
+// swapping array variables
+
+let colors = ["red" , "green" , "blue" , "black" , "white"];
+
+[colors[0] , colors[2]] = [colors[2] , colors[0]];
+
+console.log(colors);
+
+// assigning from array
+
+[firstcolor , secondcolor , thirdcolor , ...extra] = colors;
+
+console.log(firstcolor , secondcolor , thirdcolor , extra);
+
+// destructure to object
+
+const person1 = {
+    firstname: "Labib",
+    lastname: "tahmid",
+    age: 23,
+    job: "Student",
+}
+
+const person2 = {
+    firstname: "x",
+    lastname: "y",
+    age: 34,
+}
+
+const {firstname , lastname , age , job = "None"} = person1;
+
+console.log(firstname , lastname , age , job);
+
+// destructuring in function 
+
+function displayInfo ({firstname , lastname , age , job = "None"}) {
+    console.log(firstname , lastname , age , job);
+}
+
+displayInfo(person2);
+*/
+
+
+/* Nested Object 
+
+
+const Info = {
+    fullname: "Labib Tahmid",
+    age: 23,
+    isStudent: true,
+    Address: {
+        area: "bosila",
+        city: "Dhaka",
+        country: "Bangladesh",
+    }
+}
+
+console.log(Info.fullname , Info.age , Info.isStudent , Info.Address , Info.Address.city);
+
+class Person {
+    constructor (fullname , age , ...address) {
+        this.fullname = fullname;
+        this.age = age;
+        this.address = new Address(...address);
+    }
+}
+
+class Address {
+    constructor (area , city , country) {
+        this.area = area;
+        this.city = city;
+        this.country = country;
+    }
+}
+
+const person1 = new Person("LabibTahmid" , 23 , "Bosila" , "Dhaka" , "Bangladesh");
+
+console.log(person1.fullname , person1.age , person1.address , person1.address.country);
+*/
+
+
+/* Arrays of Object 
+
+
+const fruits = [{name:"apple" , color:"red" , price: 50.45} , 
+                {name:"orange" , color:"orange" , price: 75.35} , 
+                {name:"banana" , color:"yellow" , price: 10.75}]
+
+fruits.push({name:"jackfruit" , color:"yellow" , price: 100.85});
+// fruits.pop();
+// fruits.splice(1 , 1);
+
+console.log(fruits);
+
+fruits.forEach(fruit => console.log(fruit));
+
+const fruitsName = fruits.map(fruit => fruit.name);
+
+console.log(fruitsName);
+
+const matchColor = fruits.filter(fruit => fruit.color === "yellow");
+
+console.log(matchColor);
+
+const maxPrice = fruits.reduce((currentMax , fruit) => 
+                                fruit.price > currentMax.price ? fruit : currentMax);
+const minPrice = fruits.reduce((currentMin , fruit) => 
+                                fruit.price < currentMin.price ? fruit : currentMin);
+
+console.log(maxPrice);
+console.log(minPrice);
+*/
+
+
+/* sort 
+
+
+let fruits = ["banana" , "orange" , "kiwi" , "apple" , "coconut"];
+
+fruits.sort();
+console.log(fruits);
+
+let number = [1 , 10 , 7 , 4 , 9 , 6 , 8 ,5 , 3 , 2];
+
+console.log(number.sort((x , y) => x - y));
+
+const people = [{name: "X" , age: 26 , gpa: 3.2} , {name: "Y" , age: 19 , gpa: 2.8} , {name: "Z" , age: 31 , gpa: 4.0}];
+
+// people.sort((a , b) => a.gpa - b.gpa);
+people.sort((a , b) => b.name.localeCompare(a.name)); // if comparing name use localCompare
+
+console.log(people);
+*/
+
+
+/* Shuffle An Array 
+
+
+const cards = ['A',2,3,4,5,6,7,8,9,10,'J','Q','K'];
+
+function shuffle (array) {
+    for(let i = array.length - 1 ; i > 0 ; i--) {
+        const random = Math.floor(Math.random() * (i + 1)); //i+1 beacause we dont need after i positins, they are shuffled already
+        [array[i] , array[random]] = [array[random] , array[i]];
+    }
+}
+
+shuffle(cards);
+console.log(cards);
+*/
+
+
+/* Dates 
+
+
+const date1 = new Date();
+const date2 = new Date(2026 , 0 , 17 , 8 , 45 , 56);
+const date3 = new Date("2027-01-17T14:56:46Z");
+const date4 = new Date(1000000000000); //from when computer time start in ms
+
+console.log(date1);
+console.log(date2);
+console.log(date3);
+console.log(date4);
+
+console.log(date1.getFullYear() , date1.getMonth() , date1.getDay() , date1.getDate() , date1.getHours() , date1.getMinutes() , date1.getSeconds() , date1.getMilliseconds());
+
+date1.setFullYear(2028);
+date1.setDate(31);
+
+console.log(date1);
+*/
+
+
+/* Closures 
+
+
+function outer () {
+    let message = "Hello!";
+    function inner () {
+        console.log(message);
+    }
+    inner();
+}
+
+outer();
+
+function counting () {
+    let count = 0 ;
+
+    function increment () {
+        count++;
+        console.log(`Count increased to ${count}`);
+    }
+
+    function getcount () {
+        return count;
+    }
+
+    return {increment , getcount};
+
+}
+
+let counter = counting();
+
+counter.increment();
+counter.increment();
+counter.increment();
+counter.increment();
+
+console.log(counter.getcount());
+
+function createGame () {
+    let score = 0;
+
+    function increasrpoint (point) {
+        score += point;
+        console.log(`+${point}`);
+    }
+
+    
+    function decreasrpoint (point) {
+        score -= point;
+        console.log(`-${point}`);
+    }
+
+    
+    function showpoint () {
+        console.log(`${score} pts`);
+    }
+
+    return {increasrpoint , decreasrpoint , showpoint};
+}
+
+const game = createGame();
+
+game.increasrpoint(5);
+game.increasrpoint(6);
+game.decreasrpoint(3);
+game.showpoint();
+*/
+
+
+/* Set Timeout
+
+// function sayHello () {
+//     window.alert ("Hello!");
+// }
+
+// setTimeout(sayHello , 3000);
+
+// setTimeout(function() {window.alert("Hello2!")} , 3000);
+
+// const clearTime = setTimeout(() => window.alert("Hello3!") , 3000);
+
+// clearTimeout(clearTime);
+
+const hello = document.getElementById("hello");
+const myButton = document.getElementById("myButton");
+
+myButton.onclick = function () {
+    setTimeout(() => hello.textContent = "Hello After 3 Sec!" , 3000);
+}
+*/
+
+
 /* */
