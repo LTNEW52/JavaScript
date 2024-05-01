@@ -1,0 +1,26 @@
+body{
+    background-image: url(Image/background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0px;
+}
+
+#clockContainer {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+#clock {
+    font-family: monospace;
+    font-size: 5.5rem;
+    color: aqua;
+    font-weight: bold;
+    text-align: center;
+}
+
+#clock p {
+    padding: 35px;
+}

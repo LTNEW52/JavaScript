@@ -1247,4 +1247,128 @@ myButton.onclick = function () {
 */
 
 
-/* */
+/* ES6 Module 
+
+
+import {PI , area , circumference , volume} from './MathUtil.js' ;
+
+console.log(PI);
+
+console.log(circumference(10));
+console.log(area(10));
+console.log(volume(10).toFixed(2));
+*/
+
+
+/* Asynchronous Code 
+
+
+setTimeout(() => console.log("task 1") , 3000);
+
+console.log("task 2");
+console.log("task 3");
+console.log("task 4");
+console.log("task 5");
+
+function func1 (callback) {
+    setTimeout(() => {console.log("task 1"); 
+                        callback();} , 3000);
+}
+
+function func2 () {
+    console.log("task 2");
+    console.log("task 3");
+    console.log("task 4");
+    console.log("task 5");
+}
+
+func1(func2);
+*/
+
+
+/* Error Handling 
+
+
+// console.log(x);
+// console.log("You reached the end!");
+
+// try {
+//     console.log(x);
+// } catch (error) {
+//     console.error(error);
+// } finally {
+//     console.log("This always executes");
+// }
+
+// console.log("You Reached The End!");
+
+try {
+    const divident = Number(window.prompt("Enter Divident:"));
+    const divisor = Number(window.prompt("Enter Divisor:"));
+    const result = divident / divisor;
+
+    if (divisor === 0) {
+        throw new Error("You cant divide by zero!");
+    }else if (isNaN(divisor) || isNaN(divident)) {
+        throw new Error ("Must be a number!");
+    }
+
+    console.log(result);
+
+} catch(error) {
+    console.error(error);
+} finally {
+    console.log("Its always there!");
+}
+
+console.log("You reached the end!");
+*/
+
+
+/* Element Selector 
+
+
+const myHeading = document.getElementById("myHeading");
+
+myHeading.style.backgroundColor = "black";
+myHeading.style.textAlign = "center";
+
+const fruits = document.getElementsByClassName("fruits");
+
+fruits[0].style.backgroundColor = "red";
+fruits[1].style.backgroundColor = "yellow";
+fruits[2].style.backgroundColor = "orange";
+
+fruits[1].style.textAlign = "center";
+fruits[2].style.textAlign = "right";
+
+Array.from(fruits).forEach((fruit) => {
+    fruit.style.color = "black";
+    fruit.style.fontWeight = "bold";
+})
+
+const h4Elements = document.getElementsByTagName("h4");
+
+h4Elements[0].style.color = "green";
+h4Elements[1].style.color = "violet";
+
+const liElements = document.getElementsByTagName("li");
+
+for (let liElement of liElements) {
+    liElement.style.color = "aquamarine";
+    liElement.style.listStyle = "square";
+}
+
+const element = document.querySelector(".fruits");
+
+element.style.fontStyle = "italic";
+
+const element1 = document.querySelector("h4");
+element1.style.fontSize = "2em";
+
+const foods = document.querySelectorAll("li");
+
+foods.forEach((food) => {
+    food.style.backgroundColor = "purple";
+})
+*/

@@ -1,0 +1,60 @@
+body {
+    background-image: url(Image/background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0px;
+    font-family: monospace;
+}
+
+#stopwatchcontainer {
+    text-align: center;
+    border: 2px dashed aqua;
+    width: fit-content;
+    margin: auto;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 5.5em;
+    color: aqua;
+}
+
+#stopwatchcontainer #watch {
+    font-size: 4em;
+    color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 19vh;
+}
+
+#stopwatchcontainer button {
+    background-color: rgb(31, 29, 29);
+    border-radius: 25px;
+    margin: 30px;
+    font-size: 2.2em;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#stopwatchcontainer button:hover {
+    background-color: rgb(68, 64, 64);
+}
+
+#start {
+    color: rgb(96, 255, 96);
+}
+
+#stop {
+    color: rgb(253, 116, 116);
+}
+
+#reset {
+    color: #6868f8;
+}
+
+
+
