@@ -1372,3 +1372,290 @@ foods.forEach((food) => {
     food.style.backgroundColor = "purple";
 })
 */
+
+
+/* DOM Navigation 
+
+
+const element = document.getElementById("vegetables");
+const firstchild = element.firstElementChild;
+
+firstchild.style.backgroundColor = "yellow";
+
+const element1 = document.getElementById("dessert");
+const lastchild = element1.lastElementChild;
+
+lastchild.style.backgroundColor = "red";
+
+const element2 = document.getElementById("Apple");
+const nextsibling = element2.nextElementSibling;
+
+nextsibling.style.color = "green";
+
+const element3 = document.getElementById("Potatoes");
+const previoussibling = element3.previousElementSibling;
+
+previoussibling.style.fontStyle = "italic";
+
+const element4 = document.getElementById("Apple");
+const parent = element4.parentElement;
+
+parent.style.fontSize = "3em";
+
+const element5 = document.getElementById("dessert");
+const childs = element5.children;
+
+Array.from(childs).forEach((child) => {
+    child.style.listStyle = "square";
+})
+*/
+
+
+/* ADD or Change in HTML
+
+
+const newH1 = document.createElement("h1");
+newH1.textContent = "I Like Pizza!";
+newH1.id = "myH1";
+newH1.style.color = "tomato";
+newH1.style.textAlign = "center";
+
+// document.body.append(newH1);
+// document.body.prepend(newH1);
+
+document.getElementById("box3").append(newH1);
+
+// const box2 = document.getElementById("box2");
+// document.body.insertBefore(newH1 , box2);
+
+// const box = document.querySelectorAll(".box");
+// document.body.insertBefore(newH1 , box[2]);
+
+// document.body.removeChild(newH1);
+
+// document.getElementById("box3").removeChild(newH1);
+*/
+
+
+/* Mouse Event 
+
+
+const mybox = document.getElementById("mybox");
+
+mybox.addEventListener("click" , chageBackgroundColor);
+
+function chageBackgroundColor (event) {
+    event.target.style.backgroundColor = "violet";
+    event.target.textContent = "Ouch! 🤕";
+}
+
+mybox.addEventListener("mouseover" , event =>  {
+    event.target.style.backgroundColor = "yellow" ;
+    event.target.textContent = "Don't do it! 😠";
+})
+
+mybox.addEventListener("mouseout" , event =>  {
+    event.target.style.backgroundColor = "cyan" ;
+    event.target.textContent = "Click Me! 🤣";
+})
+
+const myButton = document.getElementById("myButton");
+
+myButton.addEventListener("click" , chageBackgroundColor1);
+
+function chageBackgroundColor1 (event) {
+    mybox.style.backgroundColor = "violet";
+    mybox.textContent = "Ouch! 🤕";
+}
+
+myButton.addEventListener("mouseover" , event =>  {
+    mybox.style.backgroundColor = "yellow" ;
+    mybox.textContent = "Don't do it! 😠";
+})
+
+myButton.addEventListener("mouseout" , event =>  {
+    mybox.style.backgroundColor = "cyan" ;
+    mybox.textContent = "Click Me! 🤣";
+})
+*/
+
+
+/* Key Events 
+
+
+const mybox = document.getElementById("mybox");
+
+// document.addEventListener("keydown" , event => {
+//     mybox.style.backgroundColor = "tomato";
+//     mybox.textContent = "😏";
+// })
+
+// document.addEventListener("keyup" , event => {
+//     mybox.style.backgroundColor = "cyan";
+//     mybox.textContent = "🤣";
+// })
+
+const movement = 15;
+let x = 0;
+let y = 0;
+let z = 0;
+
+document.addEventListener("keydown" , event => {
+    if (event.key.startsWith("Arrow") || (event.key === 'w' || event.key === 'a' || event.key === 's' || event.key === 'd')) {
+        switch(event.key) {
+            case 'w' : y -= movement;
+            break;
+            case 'a' : x -= movement;
+            break;
+            case 's' : y += movement;
+            break;
+            case 'd' : x += movement;
+            break;
+            case ('w' && 'a') : z -= movement; 
+            break;
+            case ('w' && 'd') : z -= movement; 
+            break;
+            case ('s' && 'a') : z += movement; 
+            break;
+            case ('s' && 'd') : z += movement; 
+            break;
+        }
+        mybox.style.transform = `translateX(${x}px) translateY(${y}px) translateZ(${z}px)`;
+        mybox.textContent = "🙄";
+        mybox.style.backgroundColor = "tomato";
+    }
+})
+
+document.addEventListener("keyup" , event => {
+    mybox.style.backgroundColor = "cyan";
+    mybox.textContent = "🤣";
+})
+*/
+
+
+/* Hide/show HTML 
+
+
+const myButton = document.getElementById("myButton");
+const myImg = document.getElementById("myImg");
+
+myButton.addEventListener("click" , element => {
+
+    if (myImg.style.display === "none") {
+        myImg.style.display = "block"; 
+        myButton.textContent = "Hide";
+    } else {
+        myButton.textContent = "Show";
+        myImg.style.display = "none"; //display: none better than visibility hidden here beacuse the img is under
+    }
+})
+*/
+
+
+/* NodeLists 
+
+
+let myButton = document.querySelectorAll(".myButton");
+
+const newButton = document.createElement("button");
+newButton.textContent = "NewButton";
+newButton.classList = "myButton";
+document.body.appendChild(newButton);
+
+myButton = document.querySelectorAll(".myButton");
+
+myButton.forEach(button => {
+    button.addEventListener("mouseover", event => {
+        button.style.backgroundColor = "green";
+    })
+
+    button.addEventListener("mouseout", event => {
+        button.style.backgroundColor = "rgb(34, 32, 32)";
+    })
+
+    button.addEventListener("click" , event => {
+        document.body.removeChild(button);
+        myButton = document.querySelectorAll(".myButton");
+        console.log(myButton);
+    })
+})
+*/
+
+
+/* ClassList 
+
+
+const myButton = document.getElementById("myButton");
+
+myButton.classList.add("enabled"); // add remove css class dynamically
+// myButton.classList.remove("enabled");
+
+// myButton.addEventListener("mouseover" , event => {
+//     // myButton.classList.add("hover");
+//     myButton.classList.toggle("hover");
+// })
+
+// myButton.addEventListener("mouseout" , event => {
+//     // myButton.classList.remove("hover");
+//     myButton.classList.toggle("hover");
+// })
+
+myButton.addEventListener("click" , event => {
+    myButton.classList.replace("enabled" , "hover");
+})
+*/
+
+
+/* Callback Hell 
+
+
+function task1 (callback) {
+    setTimeout(() => {
+        console.log("Task1 complete");
+        callback();
+    } , 2000)
+}
+
+function task2 (callback) {
+    setTimeout(() => {
+        console.log("Task2 complete");
+        callback();
+    } , 4000)
+}
+
+function task3 (callback) {
+    setTimeout(() => {
+        console.log("Task3 complete");
+        callback();
+    } , 1000)
+}
+
+function task4 (callback) {
+    setTimeout(() => {
+        console.log("Task4 complete");
+        callback();
+    } , 5000)
+}
+
+function task5 (callback) {
+    setTimeout(() => {
+        console.log("Task5 complete");
+        callback();
+    } , 1500)
+}
+
+task1(() => {
+    task2(() => {
+        task3(() => {
+            task4(() => {
+                task5(() => {
+                    console.log("All task Complete");
+                })
+            })
+        })
+    })
+});
+*/
+
+
+/* */

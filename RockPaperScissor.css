@@ -1,0 +1,54 @@
+body {
+    background-image: url(Image/background.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0px;
+    text-align: center;
+    font-family: verdana , sans-serif;
+}
+
+h1 {
+    color: aqua;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.player {
+    background-color: lightblue;
+    border-radius: 50px;
+    border: none;
+    width: 100px;
+    height: 100px;
+    margin: 30px;
+    font-size: 3rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.player:hover {
+    background-color: hsl(195, 53%, 59%);
+}
+
+p {
+    color: aqua;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#result {
+    font-size: 3rem;
+}
+
+.greentext {
+    color: rgb(22, 221, 22);
+}
+
+.redtext {
+    color: rgb(236, 77, 77);
+}
+
+.yellowtext {
+    color: rgb(141, 219, 23);
+}

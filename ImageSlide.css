@@ -1,0 +1,45 @@
+.slider {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider img {
+    width: 50%;
+    height: 300px;
+    display: none;
+    margin:0px 60px 0px 60px;
+}
+
+img.displayslide {
+    display: block;
+    animation-name: glow;
+    animation-duration: 1.5s;
+
+}
+
+.slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background-color: hsla(0, 0%, 0%, 0.445);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 35%;
+}
+
+@keyframes glow {
+    0% {opacity: 30%;};
+    100% {opacity: 100%;};
+}
