@@ -1,0 +1,20 @@
+[{
+    "name": "Superman",
+    "age": 35,
+    "isEmployed": "true"
+} ,
+{
+    "name": "Batman",
+    "age": 52,
+    "isEmployed": "false"
+} ,
+{
+    "name": "WonderWoman",
+    "age": 32,
+    "isEmployed": "true"
+} ,
+{
+    "name": "Flash",
+    "age": 27,
+    "isEmployed": "false"
+}]

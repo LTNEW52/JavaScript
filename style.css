@@ -8,11 +8,10 @@ body {
 button {
     background-color: rgb(34, 32, 32);
     color: aquamarine;
-    width: 200px;
-    height: auto;
+    width: auto;
+    height: 50px;
     border-radius: 25px;
     font-size: 1.1em;
-    display: block;
 }
 
 .box {
@@ -46,4 +45,17 @@ button {
 .hover {
     box-shadow: 2px 2px 5px black;
     font-style: italic;
+}
+
+input {
+    width: 250px;
+    text-align: center;
+    height: 40px;
+    margin: 20px;
+    font-size: 1.3rem;
+}
+
+.imgsize {
+    width: 500px;
+    height: 500px;
 }

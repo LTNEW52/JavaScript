@@ -1,0 +1,6 @@
+{
+    "name": "Superman",
+    "age": 35,
+    "isEmployed": "true",
+    "powers": ["Laser Eye" , "Freeze Breath" , "Super Punch"]
+}

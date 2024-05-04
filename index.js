@@ -1226,6 +1226,7 @@ game.showpoint();
 
 /* Set Timeout
 
+
 // function sayHello () {
 //     window.alert ("Hello!");
 // }
@@ -1658,4 +1659,248 @@ task1(() => {
 */
 
 
-/* */
+/* promise
+
+
+function walkdog () {
+    return new Promise ((resolve , reject) => {
+        setTimeout (() => {
+            let dogwalk = true;
+            if (dogwalk) {
+                resolve ("you walked the dog")
+            } else {
+                reject ("you Didn't walked the dog")
+            }
+        } , 1500)
+    })
+}
+
+function cleankitchen () {
+    return new Promise ((resolve , reject) => {
+        setTimeout (() => {
+            let kitchenclean = true;
+            if (kitchenclean) {
+                resolve ("you cleaned the kitchen")
+            } else {
+                reject ("you Didn't clean the kitchen")
+            }
+        } , 2500)
+    })
+}
+
+function taketrash () {
+    return new Promise ((resolve , reject) => {
+        setTimeout (() => {
+            let trashtake = true;
+            if (trashtake) {
+                resolve ("you took out the trash")
+            } else {
+                reject ("you Didn't take out the trash")
+            }
+        } , 500)
+    })
+}
+
+walkdog().then(value => {console.log(value); return cleankitchen()})
+.then(value => {console.log(value); return taketrash()})
+.then(value => {console.log(value); console.log("task finished")})
+.catch(error => console.error(error));
+*/
+
+
+/* Async/Await 
+
+
+function walkdog () {
+    return new Promise ((resolve , reject) => {
+        setTimeout (() => {
+            let dogwalk = true;
+            if (dogwalk) {
+                resolve ("you walked the dog")
+            } else {
+                reject ("you Didn't walked the dog")
+            }
+        } , 1500)
+    })
+}
+
+function cleankitchen () {
+    return new Promise ((resolve , reject) => {
+        setTimeout (() => {
+            let kitchenclean = true;
+            if (kitchenclean) {
+                resolve ("you cleaned the kitchen")
+            } else {
+                reject ("you Didn't clean the kitchen")
+            }
+        } , 2500)
+    })
+}
+
+function taketrash () {
+    return new Promise ((resolve , reject) => {
+        setTimeout (() => {
+            let trashtake = false;
+            if (trashtake) {
+                resolve ("you took out the trash")
+            } else {
+                reject ("you Didn't take out the trash")
+            }
+        } , 500)
+    })
+}
+
+async function doChores () {
+    try {
+        const walkdogresult = await walkdog();
+        console.log(walkdogresult);
+    
+        const cleankitchenresult = await cleankitchen();
+        console.log(cleankitchenresult);
+
+        const taketrashresult = await taketrash();
+        console.log(taketrashresult);
+
+        console.log("you finished the tasks");
+    } catch (error) {
+        console.error (error);
+    } finally {
+        console.log("program finished");
+    }
+}
+
+doChores();
+*/
+
+
+/* JSON files  
+
+
+// const names = ["Superman" , "Batman" , "WonderWoman" , "Flash"];
+// const person = {
+//     "name": "Superman",
+//     "age": 35,
+//     "isEmployed": "true",
+//     "powers": ["Laser Eye" , "Freeze Breath" , "Super Punch"]
+// }
+// const people = [{
+//     "name": "Superman",
+//     "age": 35,
+//     "isEmployed": "true"
+// } ,
+// {
+//     "name": "Batman",
+//     "age": 52,
+//     "isEmployed": "false"
+// } ,
+// {
+//     "name": "WonderWoman",
+//     "age": 32,
+//     "isEmployed": "true"
+// } ,
+// {
+//     "name": "Flash",
+//     "age": 27,
+//     "isEmployed": "false"
+// }]
+
+// // const jsonstring = JSON.stringify(names);
+// // const jsonstring = JSON.stringify(person);
+// const jsonstring = JSON.stringify(people);
+
+// console.log(jsonstring);
+
+// const jsonnames = `["Superman" , "Batman" , "WonderWoman" , "Flash"]`;
+// const jsonperson = `{
+//     "name": "Superman",
+//     "age": 35,
+//     "isEmployed": "true",
+//     "powers": ["Laser Eye" , "Freeze Breath" , "Super Punch"]
+// }`;
+// const jsonpeople = `[{
+//     "name": "Superman",
+//     "age": 35,
+//     "isEmployed": "true"
+// } ,
+// {
+//     "name": "Batman",
+//     "age": 52,
+//     "isEmployed": "false"
+// } ,
+// {
+//     "name": "WonderWoman",
+//     "age": 32,
+//     "isEmployed": "true"
+// } ,
+// {
+//     "name": "Flash",
+//     "age": 27,
+//     "isEmployed": "false"
+// }]`
+
+// // const parseddata = JSON.parse(jsonnames);
+// // const parseddata = JSON.parse(jsonperson);
+// const parseddata = JSON.parse(jsonpeople);
+
+// console.log(parseddata);
+
+fetch("names.json")
+    .then(response => response.json())
+    .then(value => console.log(value));
+*/
+
+
+/* Fetch data from an API */
+
+
+// fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+//     .then(response => {
+//         if (!response.ok) {
+//             throw new Error("Could not fetch your pokemon!")
+//         }
+//         return response.json();
+//     })
+//     .then(data => console.log(data.name))
+//     .catch(error => console.error(error));
+
+// async function fetchPokemon () {
+//     try {
+//         const response = await fetch("https://pokeapi.co/api/v2/pokemon/lucario");
+//         if(!response.ok) {
+//             throw new Error("Could not fetch your data!")
+//         }
+
+//         const data = await response.json();
+//         console.log(data.name);
+//     } catch(error) {
+//         console.error(error);
+//     }
+// }
+
+// fetchPokemon();
+
+const pokesubmit = document.getElementById("pokesubmit");
+pokesubmit.addEventListener("click" , getPokemon);
+
+async function getPokemon () {
+    warning.textContent = "";
+    try {
+        const pokedata = document.getElementById("pokedata").value.toLowerCase();
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokedata}`);
+
+        if(!response.ok) {
+            throw new Error("Could not get your Pokemon!");
+        }
+        
+        const data = await response.json();
+        const imgelement = data.sprites.front_default;
+        const pokeImg = document.getElementById("pokeImg");
+        pokeImg.src = imgelement;
+        pokeImg.style.display = "block";
+        pokeImg.classList.add("imgsize");
+
+    } catch(error) {
+        const warning = document.getElementById("warning");
+        warning.textContent = error;
+    }
+}
