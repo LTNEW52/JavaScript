@@ -1850,7 +1850,7 @@ fetch("names.json")
 */
 
 
-/* Fetch data from an API */
+/* Fetch data from an API
 
 
 // fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
@@ -1904,3 +1904,4 @@ async function getPokemon () {
         warning.textContent = error;
     }
 }
+*/
