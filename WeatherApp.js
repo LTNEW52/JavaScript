@@ -15,14 +15,13 @@ async function getdata () {
             throw new Error("Enter A city!");
         } else if (!respond.ok) {
             throw new Error("Can't Get Data!");
+        } else {
+            const data = await respond.json();
+            getweather(data);
         }
     } catch (error) {
         errorshow(error);
     }
-    
-    const data = await respond.json();
-
-    getweather(data);
 }
 
 function getweather (data) {
